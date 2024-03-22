@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More CSS</title>
+    <Style>
+        h2 {background-color: #c6c3f5;}
+        /* from now on use hexadecimal colors */
+        a:visited {color: #8beed9;}
+        a:hover {background-color: #6be8f4;}
+        /* pseudo selector, you need the : */
+        body {background-color:#f2dbf4;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-image: url("otto.png");
+            /* background images repeat */
+            background-size: 50%
+            /* sizing background image */
+        }
+        bgimage {background-image :url("flagotto.gif");
+        background-size: 50%;}
+        .box {background-color: #ffffff;
+            border: 5px solid #f2dbf4;
+            /* border is a comno property */
+            padding: 30px;
+            /* padding is space inside the border */
+            margin: 30px;}
+            /* margin is space outside the border */
+    </Style>
+</head>
+<body>
+    <h1>More CSS</h1>
+        <h2>Hexadecimal Colors</h2>
+        <h2>Pseudo Selectors</h2>
+            <a href="http://www.microsoft.com">Microsoft</a> <br>
+            <a href="http://www.apple.com">Apple</a>
+        <h2>Background images</h2>
+            <p class="bgimage">Lorem ipum, dolor sit amet consectetur</p>
+        <h2>Box model</h2>
+            <p class="box">Lorem ipum, dollor sit amet consectetur</p>
+</body>
+</html>
