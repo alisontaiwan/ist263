@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Front End Web Development</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+    <style>
+        body {margin: 20px;}
+        .skills {display: flex;margin: 20px auto;}
+        table, th, td {border: 1px solid black;}
+        h1 {text-align: center;}
+        .skills {display: flex; margin: 20px;}
+        .skills div {text-align: center; margin: 5px;}
+        .other-skills {background-color: rgb(239, 233, 254); margin-top: 5px; margin-left: 10px; padding: 8px; border-radius: 10px; }
+        .flexbox2 {display: flex;}
+        .flexbox2 div {flex: 1;}
+        .intro {padding: 0 20px;} 
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">My Bio <span>|</span> </a>
+        <a href="skills02.html">My skills <span>|</span></a>
+        <a href="contact04.html">My Contact</a>
+    </nav>
+    <h1><strong>Alison's Personalized Skills Table</strong></h1>
+    <div class="intro">My skills vary from musical instruments, languages, and fundamental coding. Below are my core skills.</div>
+    
+    <div class="flexbox2">
+        <div class="skills">
+            <div>
+                <img src="music.svg" alt="music" width="40">
+                <p>Flute</p>
+            </div>
+            <div>
+                <img src="bad.png" alt="Badminton" width="80">
+                <p>Badminton</p>
+            </div>
+            <div>
+                <img src="language.svg" alt="language" width="40">
+                <p>Traditional Chinese</p>
+            </div>
+            <div>
+                <img src="pen.svg" alt="pen" width="40">
+                <p>Chinese Calligraphy</p>
+            </div>
+            <div>
+                <img src="html.svg" alt="html" width="40">
+                <p>HTML</p>
+            </div>
+        </div>
+
+        <aside class="other-skills">
+            <h2>Other Skills</h2>
+            <ul>
+                <li>Guitar</li>
+                <li>English</li>
+                <li>Japanese</li>
+                <li>Taiwanese</li>
+                <li>Python</li>
+            </ul>
+        </aside>
+    </div>
+
+</body>
+</html>
