@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger</title>
+    <style>
+        a {
+            background-color: #fcd4da;
+            padding: 15px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #twicon {
+            width: 300px;
+            display: none;
+        }
+        #close {
+            display: none;
+        }
+        @media only screen and (max-width: 800px) {
+            #twicon, #close {display: block;}
+            a {display: block;}
+            #navlinks {display: none;}
+            .boxit {display:flex;
+                justify-content: space-between;}
+        }
+    </style>
+    <script>
+        function showNav () {
+            document.getElementById("navlinks").style.display = "block";
+        }
+        function hideNav () {
+            document.getElementById("navlinks").style.display = "none";
+        }
+    </script>
+</head>
+<body>
+    <div class="boxit">
+        <img id="twicon" onclick="showNav();" src="https://pwu110-su.github.io/ist263/project/images/tw.jpg" alt="taiwan">
+        <p id="close" onclick="hideNav();">X</p>
+    </div>
+    <nav id="navlinks">
+        <a>About</a>
+        <a>Skills</a>
+        <a>Contact</a>
+    </nav>
+    
+    <h1>Hamburger Menu</h1>
+    <h2>CSS</h2>
+    <ol>
+        <li>large - no hambuger</li>
+        <li>small - show hambuger</li>
+        <li>large - no X</li>
+        <li>small - show X</li>
+        <li>large - link side by side</li>
+        <li>small - links are stacked</li>
+        <li>small - links initially hidden</li>
+    </ol>
+    <h2>Javascript</h2>
+    <ol>
+        <li>click on hambuger links show</li>
+        <li>click on the X links hide</li>
+    </ol>
+</body>
+</html>
