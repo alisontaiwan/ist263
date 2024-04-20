@@ -1,0 +1,17 @@
+body {font-family:Georgia, 'Times New Roman', Times, serif;}
+h1, h2{color: #6f6191;}
+nav {font-size: 1.2em;
+    background-color: #ddebfa;
+    padding: #44404b;
+    padding: 10px;
+    border:2px solid #6f6969;
+    margin-bottom: 30px;}
+nav a {background-color: #C2E8ED;}
+nav a:hover {background-color: #ebc6f4;}
+h1 {font-size: 2.3em;}
+h2 {font-size: 1.5em;}
+@media only screen and (max-width: 600px) 
+    {nav a {display:block;}
+    nav a {padding: 10px;}
+    span {display: none;}}
+        
