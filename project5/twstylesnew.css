@@ -1,7 +1,8 @@
 body {font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif}
 h1{color: #33455a;
     font-size: 2em;
-    text-align: center;}
+    text-align: center;
+margin-top: 40px;}
 nav {font-size: 1.1em;
     background-color: #827fb4;
     margin-bottom: 10px;
@@ -100,47 +101,50 @@ nav a:hover {background-color: #d4d1f0; color:#7976b6}
     text-align: center;
     padding: 10px;}
 
-@media only screen and (max-width: 700px) {
-    .firstrow {display: flex;
-        flex-direction: column;}
-
-    .firstrow img {max-width: 100%;
-        height: auto;}
-
-    .secondrow {text-align: center;}
-
-    .image-container {display: flex;
-        flex-wrap: wrap;
-        justify-content: center;}
-
-    .image-box {flex: 0 0 100%;
-        text-align: center;
-        margin-bottom: 20px;}
-
-    .image-box img {max-width: 100%;
-        height: auto;}
-
-    .content {padding: 0 20px}
-}
-/* food*/
-.food {display: flex;
-    align-items: center;
-    margin: 110px;
-    background-color: #f0f0f0; 
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px #0000001a;}
-
-.xiaolongbao {margin-right: 30px;} 
-.xiaolongbao img {
-    max-width: 500px}
-.xiaolongbao h2 {
-    margin-top: 0;
-    margin-bottom: 10px;}
-.xiaolongbao p {margin: 0;
-    background-color: white;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px #0000001a;}
-
+@media (max-width: 900px) {
+        h1 {
+          font-size: large;
+        }
+      
+        nav {
+          font-size: 1em;
+          margin: 5px;
+          padding: 5px;
+        }
+      
+        .bigtitle {
+          font-size: 1.5em;
+          line-height: 1.2;
+        }
+      
+        .first {
+          flex-direction: column;
+        }
+      
+        .first img {
+          max-width: 100%;
+          height: auto;
+          margin: 10px 0;
+        }
+      
+        .row1 {
+          flex-direction: column;
+          margin: 50px 20px;
+        }
+      
+        .locationtw {
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+      
+        .locationtw img {
+          max-width: 100%;
+        }
+      
+        .facts1,
+        .facts2 {
+          grid-template-columns: 1fr;
+          margin: 20px;
+        }
+      }
 

@@ -4,8 +4,10 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Must Eat Taiwanese Food</title>
-   <link rel="stylesheet" href="twstylesnew.css">
+   <link rel="stylesheet" href="place.css">
    <link rel="shortcut icon" type="image/x-icon" href="../project/images/favicon.ico">
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 </head>
 <body>
    <nav>
@@ -13,36 +15,170 @@
        <a href="homenew.html">Home </a>
        <a href="placenew.html">Must-Go Attractions</a>
    </nav>
-   <div class="imagecontent">
-       <div class="image-container">
-           <img src="../project/images/alishan.jpg" alt="Description 1">
-           <div class="content">
-               <h2>Content Title 1</h2>
-               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis tincidunt ex, vel posuere libero fermentum vitae.</p>
-           </div>
-       </div>
-       <div class="image-container">
-           <img src="../project/images/kenting.jpg" alt="Description 2">
-           <div class="content">
-               <h2>Content Title 2</h2>
-               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis tincidunt ex, vel posuere libero fermentum vitae.</p>
-           </div>
-       </div>
-       <div class="image-container">
-           <img src="image3.jpg" alt="Description 3">
-           <div class="content">
-               <h2>Content Title 3</h2>
-               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis tincidunt ex, vel posuere libero fermentum vitae.</p>
-           </div>
-       </div>
-       <div class="image-container">
-           <img src="image4.jpg" alt="Description 4">
-           <div class="content">
-               <h2>Content Title 4</h2>
-               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis tincidunt ex, vel posuere libero fermentum vitae.</p>
-           </div>
-       </div>
+   <h1>Uncover the Wonders of Taiwan: A Guide to the Best Must-Visit Attractions!</h1>
+   <h4>To explore Taiwan's top attractions, simply click on the map icons to reveal more information. Each icon represents a must-visit destination, and when clicked,<br> it will display the attraction's name, a photo, and a detailed description. Feel free to browse the map, learn about the diverse array of natural wonders, cultural sites, and scenic landscapes that Taiwan has to offer, and plan your ideal itinerary :D </h4>
+  <script>
+    ('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+        });
+    });
+  </script>
+   <div class="main-container">
+    <div class="map-container">
+      <div id="map"></div>
+    </div>
+    <div class="details-container">
+      <div class="attraction-details">
+        <h3 class="attraction-name"></h3>
+        <img class="attraction-image" alt="Click to Show Attraction Image!">
+        <p class="attraction-description"></p>
+      </div>
+    </div>
    </div>
+   <script>
+        var map = L.map('map').setView([23.6, 120.9], 7); 
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        var attractions = [
+    {
+        name: "Taroko National Park",
+        location: [24.1, 121.3],
+        description: "Taroko National Park is a stunning natural wonder in Taiwan, known for its dramatic marble gorges and hiking trails. The park's centerpiece is the Taroko Gorge, a magnificent 19-kilometer-long canyon carved out of the marble mountains. Visitors can explore the park's diverse landscapes, from towering cliffs to lush, verdant forests, and learn about the indigenous Truku people who call this place home",
+        image: "../project/images/taroko.jpeg"
+    },
+    {
+        name: "Taipei 101",
+        location: [25.0, 121.6],
+        description: "Taipei 101 is an iconic skyscraper in Taipei, Taiwan, and was once the world's tallest building. Designed with a distinctive pagoda-style architectural design, the 101-story tower features an innovative wind damper system and state-of-the-art engineering that allows it to withstand typhoons and earthquakes. Visitors can take high-speed elevators to the observation decks on the upper floors, offering panoramic views of the Taipei cityscape and the surrounding mountains.",
+        image: "../project/images/101.jpg"
+    },
+    {
+        name: "Sun Moon Lake",
+        location: [23.8, 120.9],
+        description: "Sun Moon Lake is a beautiful freshwater lake in central Taiwan, known for its scenic views and cultural attractions. The lake is divided into two distinct sections - the sun and the moon - by the Lalu Peninsula. Visitors can explore the area by taking a leisurely boat tour, hiking on nearby trails, or visiting landmarks like the Ita Thao Indigenous Village and the Wenwu Temple, which offer stunning vistas of the lake and the surrounding mountains.",
+        image: "../project/images/sunmoonlake.jpeg"
+    },
+    {
+        name: "Alishan National Scenic Area",
+        location: [23.5, 120.8],
+        description: "Alishan National Scenic Area is a mountain resort famous for its stunning sunrises, lush forests, and historic narrow-gauge railway. Nestled high in the central mountain range of Taiwan, the area is known for its diverse landscapes, including towering peaks, serene tea plantations, and ancient forests. Visitors can experience the area's natural beauty by taking a ride on the iconic Alishan Forest Railway, hiking through the trails, or witnessing the breathtaking sunrise over the sea of clouds.",
+        image: "../project/images/alishan.jpg"
+    },
+    {
+        name: "National Palace Museum",
+        location: [25.1, 121.5],
+        description: "The National Palace Museum in Taipei is home to one of the world's largest collections of Chinese art and artifacts. The museum's impressive holdings span over 8,000 years of Chinese history, including paintings, calligraphy, jade, bronze, and ceramic pieces of immense cultural and historical significance. Visitors can explore the museum's vast galleries and discover the many treasures that showcase the rich artistic and intellectual traditions of ancient Taiwan.",
+        image: "../project/images/nationalpalacemuseum.jpeg"
+    },
+    {
+        name: "Kenting National Park",
+        location: [22.0, 120.8],
+        description: "Kenting National Park is a popular destination in Taiwan for its tropical beaches, coral reefs, and diverse wildlife. Located at the southernmost tip of the island, the park offers a stunning natural landscape, featuring white sand beaches, rocky cliffs, and a vibrant marine ecosystem. Visitors can enjoy a variety of outdoor activities, such as swimming, snorkeling, and hiking, while taking in the park's breathtaking ocean views and lush, subtropical vegetation.",
+        image: "../project/images/kenting.jpg"
+    },
+    {
+        name: "Yehliu Geopark",
+        location: [25.0, 121.7],
+        description: "Yehliu Geopark is known for its unique rock formations, including the iconic Queen's Head rock. This coastal park, located in northern Taiwan, features a dramatic landscape sculpted by natural erosion over thousands of years. Visitors can explore the park's winding trails and marvel at the diverse array of mushroom-shaped, honeycomb, and other unusual rock formations that have made Yehliu a popular destination for both tourists and geologists alike.",
+        image: "../project/images/yehliu.jpeg"
+    },
+    {
+        name: "Jiufen",
+        location: [24.9, 121.8],
+        description: "Jiufen is a charming mountain town in Taiwan with a well-preserved old town, tea houses, and breathtaking ocean views. The town's narrow streets and traditional buildings evoke a nostalgic, historic atmosphere, making it a popular destination for those seeking a glimpse into Taiwan's past. Visitors can wander through the old town, sample local delicacies, and enjoy the panoramic vistas of the surrounding hills and the Pacific Ocean.",
+        image: "../project/images/jiufen.jpeg"
+    },
+    {
+        name: "Xi Men Ding",
+        location: [25.0, 121.5],
+        description: "The LGBTQ+ Road, or Rainbow Road, in Taipei's Xin Men District is a vibrant and inclusive area that celebrates the LGBTQ+ community in Taiwan. This district is home to a high concentration of LGBTQ+-friendly bars, clubs, cafes, and shops, making it a popular gathering place for the community and its allies. The area hosts Taiwan's annual Pride Parade, one of the largest LGBTQ+ pride events in Asia.",
+        image: "../project/images/ximen.jpeg"
+    },
+    {
+        name: "Hualien Amis People",
+        location: [23.9, 121.6],
+        description: "The Hualien Amis are an indigenous Taiwanese people known for their rich cultural heritage, including traditional weaving, music, and dance. They have a strong connection to the land and the ocean, and their way of life is deeply influenced by the natural environment of the Hualien region.",
+        image: "../project/images/amai.jpeg"
+    },
+    {
+        name: "Anping Old Fort",
+        location: [23.0015, 120.16],
+        description: "The Anping Old Fort, also known as Fort Zeelandia, is a historic fort located in Tainan City. Built by the Dutch East India Company in the 17th century, the fort is one of the best-preserved examples of Dutch colonial architecture in Taiwan. Visitors can explore the fort's bastions, walls, and various structures to learn about the island's rich history.",
+        image: "../project/images/anpingoldfort.jpeg"
+    },
+    {
+        name: "Sansiantai",
+        location: [23.08, 121.23],
+        description: "Sansiantai, also known as the 'Three Immortals Platform,' is a scenic coastal area in Taitung County, Taiwan. The main attraction is a unique rock formation in the shape of a dragon's back, which is connected to the shore by a curved bridge. Visitors are welcome explore the rocky coastline, take in the stunning ocean views, and learn about the local folklore surrounding the 'three immortals' that the site is named after.",
+        image: "../project/images/sansiantai.jpeg"
+    },
+    {
+        name: "Hinoki Village",
+        location: [23.5, 120.4],
+        description: "Hinoki Village is a unique cultural and recreational destination in Chiayi County, Taiwan. This former logging town has been transformed into a charming village showcasing the beauty of Taiwan's cypress (Hinoki) forests. Visitors can explore the well-preserved historical buildings, participate in traditional workshops, and immerse themselves in the serene, nature-inspired atmosphere of the village.",
+        image: "../project/images/hinokivillage.jpeg"
+    },
+    {
+        name: "National Taichung Theater",
+        location: [24.1, 120.7],
+        description: "The National Taichung Theater is a stunning modern performing arts center located in Taichung, Taiwan. Designed by renowned Japanese architect Toyo Ito, the theater's unique, organic architecture is a major draw for visitors. The theater hosts a variety of cultural performances, from opera and ballet to orchestral concerts and plays, showcasing Taiwan's vibrant performing arts scene.",
+        image: "../project/images/nationaltaichungtheater.jpeg"
+    },
+    {
+        name: "Hsinchu City God Temple",
+        location: [24.8045, 120.9659],
+        description: "The Hsinchu City God Temple is a historic Taoist temple located in Hsinchu, Taiwan. Dating back to the 18th century, the temple is renowned for its ornate and intricate architectural design, featuring detailed carvings, colorful murals, and intricate roof structures. Visitors can explore the temple's halls, courtyards, and shrines, and learn about the traditional Taoist beliefs and practices that are still observed at this important cultural site.",
+        image: "../project/images/hsinchucitytemple.jpeg"
+    },
+    {
+        name: "Yushan National Park",
+        location: [23.444, 121,.0335],
+        description: "Yushan National Park, also known as Jade Mountain National Park, is home to Taiwan's highest peak, Yushan (Jade Mountain), which stands at an impressive 3,952 meters (12,966 feet) above sea level. The park is renowned for its diverse and stunning natural landscapes, including alpine meadows, pristine forests, and dramatic mountain peaks. Visitors can enjoy a variety of outdoor activities, such as hiking, mountaineering, and wildlife observation, while marveling at the park's remarkable natural beauty.",
+        image: "../project/images/yushanpark.jpeg"
+    },
+    {
+        name: "Jiaoxi Hot Springs",
+        location: [24.8, 121.8],
+        description: "Jiaoxi Hot Springs is a renowned hot spring destination located in Yilan County, Taiwan. The area is known for its natural, mineral-rich hot springs that are said to have therapeutic properties. Visitors can enjoy soaking in the warm, soothing waters of the various public and private hot spring facilities, surrounded by the lush, mountainous landscape. The town of Jiaoxi also offers a range of hot spring-related accommodations, restaurants, and other amenities catering to visitors seeking a relaxing getaway.",
+        image: "../project/images/jiaoxihotsprings.jpeg"
+    },
+    {name: "Longtan Bridge",
+        location: [24.3585, 120.7740],
+        description: "The Longtan Bridge, also known as the 'Dragon Soaring Bridge,' is a historic stone arch bridge located in Taichung, Taiwan. Originally built in the late 19th century, the bridge suffered significant damage from a major earthquake in 1999. However, rather than demolishing the structure, local authorities worked to carefully preserve and restore the iconic 'broken' arch design. The bridge's distinctive curved shape, which once resembled a dragon mid-flight, was interrupted by the earthquake, leaving a dramatic gap in the arch. Rather than rebuilding the bridge to its original form, the restoration efforts kept the 'broken' design, recognizing its cultural and architectural significance.",
+        image: "../project/images/longtanbridge.jpeg"
+    },
+    {name: "Kinmen Kaoliang Liquor Factory",
+    location: [24.4287, 118.3256],
+    description: "The Kinmen Kaoliang Liquor Factory is a renowned distillery located on the island of Kinmen, Taiwan. Established in 1952, the factory is known for its production of the iconic Kinmen Kaoliang Liquor, a high-proof distilled spirit made from sorghum. Visitors can tour the factory, learn about the traditional distillation process, and sample the various Kaoliang liquor products. The factory also houses a museum showcasing the history and cultural significance of this unique Taiwanese spirit.",
+    image: "../project/images/kinmenkaoliang.jpeg"
+    },
+    {
+    name: "Guishan Island",
+    location: [24.8468, 121.9502],
+    description: "Guishan Island, also known as Turtle Island, is a stunning offshore island located off the northeast coast of Taiwan. This volcanic island is known for its dramatic cliffs, lush greenery, and diverse marine life. Visitors can take a boat tour to explore the island's coastline, hike to the summit for panoramic views, and visit the island's famous natural hot springs. Guishan Island is also a popular destination for birdwatching, as it is home to a variety of migratory and resident bird species.",
+    image: "../project/images/guishanisland.jpeg"
+  },
+];
+    attractions.forEach(function(attraction) {
+    var marker = L.marker(attraction.location)
+        .addTo(map)
+        .on('click', function() {
+            updateAttractionDetails(attraction);
+        });
+    });
+
+    function updateAttractionDetails(attraction) {
+        document.querySelector('.attraction-name').textContent = attraction.name;
+        document.querySelector('.attraction-image').src = attraction.image;
+        document.querySelector('.attraction-description').textContent = attraction.description;
+    }
+    </script>
    <div class="footer">
        <div>
            &copy; Proudly showcasing the beauty and wonders of Taiwan, the place I call home. -- Wu Peng-Wei

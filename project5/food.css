@@ -1,0 +1,213 @@
+body {font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif}
+h1{color: #33455a;
+    font-size: 2em;
+    text-align: center;}
+nav {font-size: 1.1em;
+    background-color: #827fb4;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;}
+nav a{color: #d8d8f2; text-decoration: none;}
+nav a:hover {background-color: #d4d1f0; color:#7976b6}
+.menulist {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+    padding: 10;
+    margin: 10;}
+  
+  .menulist li {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #f1f1f1;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;}
+  
+  .menulist li:hover {
+    background-color: #e0e0e0;}
+  
+  .menulist li a {
+    text-decoration:dashed;
+    font-size: medium;
+    color: #333;
+    font-weight: bold;}
+
+.foodtitle {margin-top: 50px;}
+.food {display: flex;
+    align-items: center;
+    margin: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+    background-color: #f0f0f0; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px #0000001a;}
+.xiaolongbao img {max-width: 400px;
+    margin-right: 50px;}
+.xiaolongbaotext p {margin: 0;
+        background-color: white;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px #0000001a;}
+.boba {display: flex;
+        align-items: center;
+        margin: 50px;
+        margin-left: 100px;
+        margin-right: 100px;
+        background-color: #f0f0f0;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px #0000001a;}
+.boba img {max-width: 400px;
+        margin-right: 50px;}
+.bobatext h2 {margin-top: 0;
+        margin-bottom: 10px;}
+.bobatext p {margin: 0;
+        background-color: white;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px #0000001a;}
+
+.beef {display: flex;
+        align-items: center;
+        margin: 50px;
+        margin-left: 100px;
+        margin-right: 100px;
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px #0000001a;}
+.beef img {max-width: 400px;
+            margin-right: 50px;}
+.beeftext h2 {margin-top: 0;
+            margin-bottom: 10px;}
+.beeftext p {margin: 0;
+            background-color: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px #0000001a;}
+
+.pork {display: flex;
+        align-items: center;
+        margin: 50px;
+        margin-left: 100px;
+        margin-right: 100px;
+        background-color: #f0f0f0;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px #0000001a;}
+.pork img {max-width: 400px;
+        margin-right: 50px;}
+.porktext h2 {margin-top: 0;
+            margin-bottom: 10px;}
+.porktext p {margin: 0;
+            background-color: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px #0000001a;}
+
+.mango, .pineapple, .chicken, .oyster, .tofu, .biandang, .mianxian, .danbing, .sweetpotato
+        {display: flex;
+        align-items: center;
+        margin: 50px;
+        margin-left: 100px;
+        margin-right: 100px;
+        background-color: #f0f0f0;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px #0000001a;}
+.mango img, .pineapple img, .chicken img, .oyster img, .tofu img, .biandang img, .mianxian img, .danbing img, .sweetpotato img
+            {max-width: 400px;
+            margin-right: 50px;}
+.mangotext h2, .pineappletext h2, .chicken h2, .oyster h2, .tofu h2, .biandang h2, .mianxian h2, .danbing h2, .sweetpotato h2
+                {margin-top: 0;
+                margin-bottom: 10px;}
+.mangotext p, .pineappletext p, .chicken p, .oyster p, .tofu p, .biandang p, .mianxian p, .danbing p, .sweetpotato p
+                {margin: 0;
+                background-color: white;
+                padding: 10px;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px #0000001a;}
+
+
+.footer {background-color: #827fb4;
+        color: #d8d8f2;
+        text-align: center;
+        padding: 10px;}
+
+
+@media (max-width: 900px) {h1 {
+                  font-size: 1.5em;}
+              
+                nav {
+                  font-size: 1em;
+                  margin: 5px;
+                  padding: 5px;
+                }
+              
+                .menulist li {
+                  margin: 5px;
+                  padding: 5px 10px;
+                }
+              
+                .food,
+                .boba,
+                .beef,
+                .pork,
+                .mango,
+                .pineapple,
+                .chicken,
+                .oyster,
+                .tofu,
+                .biandang,
+                .mianxian,
+                .danbing,
+                .sweetpotato {
+                  flex-direction: column;
+                  margin: 20px;
+                  margin-left: 10px;
+                  margin-right: 10px;
+                  padding: 10px;
+                }
+              
+                .xiaolongbao img,
+                .boba img,
+                .beef img,
+                .pork img,
+                .mango img,
+                .pineapple img,
+                .chicken img,
+                .oyster img,
+                .tofu img,
+                .biandang img,
+                .mianxian img,
+                .danbing img,
+                .sweetpotato img {
+                  max-width: 100%;
+                  margin-right: 0;
+                  margin-bottom: 20px;
+                }
+              
+                .xiaolongbaotext p,
+                .bobatext p,
+                .beeftext p,
+                .porktext p,
+                .mangotext p,
+                .pineappletext p,
+                .chickentext p,
+                .oystertext p,
+                .tofutext p,
+                .biandangtext p,
+                .mianxiantext p,
+                .danbingtext p,
+                .sweetpotatotext p {
+                  padding: 5px;
+                }
+              }
