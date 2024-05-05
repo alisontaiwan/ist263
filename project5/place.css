@@ -18,10 +18,10 @@ nav {font-size: 1.1em;
     display: flex;
     align-items: center; 
     justify-content: space-between;}
-nav a{color: #d8d8f2; text-decoration: none;}
-nav a:hover {background-color: #d4d1f0; color:#7976b6}
+nav a{color: #fbfbfb; text-decoration: none;}
+nav a:hover {background-color: #daf7f8; color:#7976b6}
 .footer {background-color: #827fb4;
-    color: #d8d8f2;
+    color: #fbfbfb;
     text-align: center;
     padding: 10px;}
 .main {width: 100%;
